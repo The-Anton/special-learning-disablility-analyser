@@ -5,7 +5,7 @@ const email = 'super-email-of-the-auther@gmail.com';
 const domain = 'your-project-domain.com'
 /* ***************** */
 
-const repository = 'https://github.com/suren-atoyan/react-pwa';
+const repository = 'https://github.com/The-Anton/special-learning-disablility-analyser';
 
 const messages = {
   app: {
