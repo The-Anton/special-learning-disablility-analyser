@@ -1,0 +1,7 @@
+.card {
+  max-width: 500px;
+  max-height: 500px;
+  background: linear-gradient(45deg, red, orange, yellow);
+  border-radius: 35px;
+  margin: 10px 10px;
+}
