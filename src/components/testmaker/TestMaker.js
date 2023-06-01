@@ -99,6 +99,9 @@ const TestMaker = (props) => {
             </div>
             <Container maxWidth="xl">
                 <Header >
+                    <h4>
+                        Test Id - {localStorage.getItem("testid")}
+                    </h4>
                     <h3>
                         {props.details.name}
                     </h3>

@@ -27,7 +27,7 @@ const storageConfigured = isStorageConfigured();
 const UploadFiles = (props) => {
   // all blobs in container
   const [blobList, setBlobList] = useState([]);
-
+  const [uploaded, setUploaded] = useState(false)
   // current file to upload into container
   const [fileSelected, setFileSelected] = useState(null);
 
@@ -43,9 +43,10 @@ const UploadFiles = (props) => {
   const onFileUpload = async () => {
     // prepare UI
     setUploading(true);
+    let name =  localStorage.getItem('testid') + '-fileupload' + `-${Math.random().toString(36)}`
 
     // *** UPLOAD TO AZURE STORAGE ***
-    const blobsInContainer = await uploadFileToBlob(fileSelected);
+    const blobsInContainer = await uploadFileToBlob(fileSelected, name);
 
     // prepare UI for results
     setBlobList(blobsInContainer);
@@ -53,6 +54,7 @@ const UploadFiles = (props) => {
     // reset state/form
     setFileSelected(null);
     setUploading(false);
+    setUploaded(true);
     setInputKey(Math.random().toString(36));
   };
 
@@ -107,8 +109,23 @@ const UploadFiles = (props) => {
                 </center>
 
                 <br />
+                <br></br>
 
                 <input className="btn btn-secondary" variant="contained" style={{ paddingLeft:"auto", paddingRight:"auto"}} type="file" onChange={onFileChange} key={inputKey || ''} />
+                <br></br>
+                <br></br>
+
+                <center>
+                  {(uploading) 
+                  ? (<div>Saving your Upload! Wait a minute!</div>)
+                  : (<div></div>)}
+                </center>
+
+                <center>
+                  {(uploaded) 
+                  ? (<div>Your response has been saved.</div>)
+                  : (<div></div>)}
+                </center>
 
                 <Button
                     className='btn btn-secondary'

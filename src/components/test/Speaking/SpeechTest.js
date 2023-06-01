@@ -134,7 +134,8 @@ export default function SpeechTest(props) {
     if (audioFile) {
       assemblyAI
         .post("/upload", audioFile)
-          .then((res) => {        console.log(res);
+          .then((res) => {        
+            console.log(res.data.upload_url);
             setUploadURL(res.data.upload_url)})
         .catch((err) => console.error(err))
 
@@ -148,10 +149,8 @@ export default function SpeechTest(props) {
         audio_url: uploadURL,
       })
       .then((res) => {
-        console.log(res);
-        setTranscriptID(res.data.id)
-
         checkStatusHandler()
+        setTranscriptID(res.data.id);
       })
       .catch((err) => console.error(err))
   }
@@ -161,17 +160,18 @@ export default function SpeechTest(props) {
     setIsLoading(true)
     try {
       await assemblyAI.get(`/transcript/${transcriptID}`).then((res) => {
-        console.log(res.data)
+        console.log("Data: " + res.data.text)
         setTranscriptData(res.data)
       })
     } catch (err) {
-      console.error(err)
+      console.error("transcript error :" + err)
     }
   }
 
   // Periodically check the status of the Transcript
   useEffect(() => {
     const interval = setInterval(() => {
+
       if (transcriptData.status !== "completed" && isLoading) {
         checkStatusHandler()
       } else {
@@ -187,7 +187,6 @@ export default function SpeechTest(props) {
   const onFileUpload = async (file) => {
     // prepare UI
     setUploading(true);
-
     // *** UPLOAD TO AZURE STORAGE ***
     const blobsInContainer = await uploadFileToBlob(file);
 
@@ -255,6 +254,16 @@ export default function SpeechTest(props) {
                   
                 </QuestionCointainer>
                 
+                <br></br>
+
+                <div className="next_btn_container">
+                    <Button title="Submit" onClick={nextQuestion} size="large" variant="contained" style={{width: "100%"}}>
+                        Next
+                    </Button>
+                </div>
+              
+                <br></br>
+
                 <center>
                   {(uploading) 
                   ? (<div>Saving your answer! Wait a minute!</div>)
@@ -267,12 +276,6 @@ export default function SpeechTest(props) {
                   : (<div></div>)}
                 </center>
 
-                <div className="next_btn_container">
-                    <Button title="Submit" onClick={nextQuestion} size="large" variant="contained" style={{width: "100%"}}>
-                        Next
-                    </Button>
-                </div>
-                
             </TestContainer>
     );
 }
