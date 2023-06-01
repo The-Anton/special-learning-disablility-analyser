@@ -3,6 +3,7 @@
 // <snippet_package>
 // THIS IS SAMPLE CODE ONLY - NOT MEANT FOR PRODUCTION USE
 import { BlobServiceClient, ContainerClient} from '@azure/storage-blob';
+import { success } from 'daisyui/src/colors';
 
 const containerName = `tutorial-container`;
 const sasToken = process.env.REACT_APP_STORAGESASTOKEN;
@@ -44,7 +45,14 @@ const createBlobInContainer = async (containerClient, file) => {
   const options = { blobHTTPHeaders: { blobContentType: file.type } };
 
   // upload file
-  await blobClient.uploadData(file, options);
+  try{
+    await blobClient.uploadData(file, options);
+    alert('Upload completed!')
+  }
+  catch(err){
+    alert(err)
+  }
+
 }
 // </snippet_createBlobInContainer>
 

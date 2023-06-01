@@ -6,21 +6,21 @@ const TEST_LISTENING = {
     questions: [
             {
                 id: 1,
-                question: 'Say "cat" without the /c/ sound.',
+                question: 'Say "cat" without the c sound.',
                 answer: 'at',
                 ageMin: 5,
                 ageMax: 15
             },
             {
                 id: 2,
-                question: 'Say "mat" without the /m/ sound.',
+                question: 'Say "mat" without the m sound.',
                 answer: 'at',
                 ageMin: 5,
                 ageMax: 15
             },
             {
                 id: 3,
-                question: 'Say "fat" without the /f/ sound',
+                question: 'Say "fat" without the f sound',
                 answer: 'at',
                 ageMin: 5,
                 ageMax: 15
@@ -49,25 +49,25 @@ const TEST_LISTENING = {
             {
                 id: 7,
                 question: 'What sounds do you hear in "hot?"',
-                answer: '/h/ – /o/ – /t/',
+                answer: 'h – o – t',
                 ageMin: 5,
                 ageMax: 15
             },
             {
                 id: 8,
-                question: 'What word do these sounds make? /h/ – /o/ – /t/ ',
+                question: 'What word do these sounds make? h – o – t ',
                 answer: 'hot',
                 ageMin: 5,
                 ageMax: 15
             },
             {
-                question: 'What word do these sounds make? /t/ – /o/ – /p/ ',
+                question: 'What word do these sounds make? t – o – p ',
                 answer: 'top',
                 ageMin: 5,
                 ageMax: 15
             },
             {
-                question: 'What word do these sounds make? /c/ – /a/ – /t/ ',
+                question: 'What word do these sounds make? c – a – t ',
                 answer: 'cat',
                 ageMin: 5,
                 ageMax: 15

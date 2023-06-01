@@ -31,42 +31,42 @@ const TEST_LISTENING = {
             },
             {
                 id: 5,
-                title: 'Now say loop but instead of /l/ say /s/',
+                title: 'Now say loop but instead of l say s',
                 instruction: 'Write final word',
                 answer: 'soop',
                 questionType: 'phonological awareness'
             },
             {
                 id: 6,
-                title: 'Say sleep but don’t say /s/.',
+                title: 'Say sleep but don’t say s.',
                 instruction: 'Write final word',
                 answer: 'leap',
                 questionType: 'phonological awareness'
             },
             {
                 id: 7,
-                title: 'Say ran. Now say ran but instead of /a/ say /u/.',
+                title: 'Say ran. Now say ran but instead of a say u.',
                 instruction: 'Write final word',
                 answer: 'run',
                 questionType: 'phonological awareness'
             },
             {
                 id: 8,
-                title: 'Say bread. Now say bread but don’t say /r/.',
+                title: 'Say bread. Now say bread but don’t say r.',
                 instruction: 'Write final word',
                 answer: 'bed',
                 questionType: 'phonological awareness'
             },
             {
                 id: 9,
-                title: 'Say some. Say some but instead of /m/ say /n/.',
+                title: 'Say some. Say some but instead of m say n.',
                 instruction: 'Write final word',
                 answer: 'sun',
                 questionType: 'phonological awareness'
             },
             {
                 id: 10,
-                title: 'Say ghost. Now say ghost but don’t say /s/.',
+                title: 'Say ghost. Now say ghost but don’t say s.',
                 instruction: 'Write final word',
                 answer: 'goat',
                 questionType: 'phonological awareness'

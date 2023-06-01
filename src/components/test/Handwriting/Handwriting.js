@@ -13,7 +13,6 @@ import uploadFileToBlob, {isStorageConfigured} from './azure-handwriting-storage
 const storageConfigured = isStorageConfigured();
 
 const Handwriting = (props) => {
-    
     const webcamRef = useRef(null);
 
     const [blobList, setBlobList] = useState([]);
@@ -28,10 +27,12 @@ const Handwriting = (props) => {
     }, [webcamRef, setImgSrc]);
 
     const onFileUpload = async (file) => {
+
         setUploading(true);
 
         // *** UPLOAD TO AZURE STORAGE ***
         const blobsInContainer = await uploadFileToBlob(file);
+
 
         // prepare UI for results
         setBlobList(blobsInContainer);
@@ -56,6 +57,8 @@ const Handwriting = (props) => {
     }
 
     const upload = () => {
+
+
         const key = inputKey + '.jpg';
         const file = dataURLtoFile(imgSrc, key)
 

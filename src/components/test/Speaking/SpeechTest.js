@@ -212,7 +212,7 @@ export default function SpeechTest(props) {
                     <div style={{display:"flex", justifyContent:"space-around", margin:"24px"}}>
                       {(!isRecording)
                       ? (<IconButton onClick={startRecording} disabled={isRecording} aria-label="record" size="medium" color="success">
-                            <img src="https://uxwing.com/wp-content/themes/uxwing/download/controller-and-music/play-button-outline-green-icon.png" style={{height:"120px"}}  />
+                            <img src="https://github.com/The-Anton/special-learning-disablility-analyser/assets/51144829/70f10408-5cb0-4eb8-8681-b681a78f7918" style={{height:"120px"}}  />
                         </IconButton>)
                       : (<IconButton onClick={stopRecording} disabled={!isRecording} aria-label="pause" size="large" color="primary">
                             <Lottie options={recordingAnimationOptions} height={120} width={120} />
